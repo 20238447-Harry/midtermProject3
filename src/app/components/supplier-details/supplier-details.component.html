@@ -1,0 +1,45 @@
+<div class="details-container" *ngIf="supplier">
+
+  <h2>Supplier Details</h2>
+
+  <div class="form-group">
+    <label>ID</label>
+    <input [(ngModel)]="supplier.id" readonly>
+  </div>
+
+  <div class="form-group">
+    <label>Supplier Name</label>
+    <input [(ngModel)]="supplier.supplierName">
+  </div>
+
+  <div class="form-group">
+    <label>Location</label>
+    <input [(ngModel)]="supplier.location">
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    <input [(ngModel)]="supplier.email">
+  </div>
+
+  <div class="form-group">
+    <label>Contact Person</label>
+    <input [(ngModel)]="supplier.contactPerson">
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input [(ngModel)]="supplier.phone">
+  </div>
+
+  <div class="form-group">
+    <label>Products Supplied</label>
+    <textarea [(ngModel)]="supplier.productsSupplied"></textarea>
+  </div>
+
+  <div class="buttons">
+    <button (click)="saveChanges()">Save</button>
+    <button (click)="goBack()">Back</button>
+  </div>
+
+</div>
