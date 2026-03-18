@@ -99,14 +99,15 @@ export class SupplierService {
     }
   ];
 
+  // Returns all supplier data
   getSuppliers(): Supplier[] {
   return this.suppliers;
 }
-
+  // Finds a supplier by ID using array find()
   getSupplierById(id: number): Supplier | undefined {
   return this.suppliers.find(s => s.id === id);
 }
-
+  // Updates a supplier by finding its index and replacing it
   updateSupplier(updatedSupplier: Supplier): void {
   const index = this.suppliers.findIndex(s => s.id === updatedSupplier.id);
   if (index !== -1) {

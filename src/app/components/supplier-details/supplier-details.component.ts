@@ -25,24 +25,23 @@ export class SupplierDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
+      // Subscribe to route parameters to get the supplier ID
     this.route.params.subscribe(params => {
-
       this.supplierId = Number(params['id']);
-
+      // Retrieve supplier data using the service
       this.supplier = this.supplierService.getSupplierById(this.supplierId);
 
     });
 
   }
-
+  // Saves updated supplier data to the service
   saveChanges(): void {
     if (this.supplier) {
       this.supplierService.updateSupplier(this.supplier);
       alert('Supplier updated successfully!');
     }
   }
-
+  // Navigates back to suppliers list
   goBack(): void {
     this.router.navigate(['/suppliers']);
   }

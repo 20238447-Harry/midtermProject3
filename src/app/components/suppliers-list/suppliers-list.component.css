@@ -13,7 +13,7 @@ h2{
 table{
   border-collapse:collapse;
   width:50%;
-  background:rgb(99, 99, 99);
+  background:rgb(136, 136, 136);
 }
 
 th, td{
@@ -23,7 +23,7 @@ th, td{
 }
 
 th{
-  background:#3b3b3b;
+  background:rgb(99, 99, 99);
   color:rgb(0, 0, 0);
 }
 

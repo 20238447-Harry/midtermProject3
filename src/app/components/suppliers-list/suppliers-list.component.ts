@@ -22,9 +22,11 @@ export class SuppliersListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Load all suppliers from the service
     this.suppliers = this.supplierService.getSuppliers();
   }
-
+  
+  // Navigate to supplier details page with selected ID
   viewSupplierDetails(id: number): void {
     this.router.navigate(['/suppliers', id]);
   }
