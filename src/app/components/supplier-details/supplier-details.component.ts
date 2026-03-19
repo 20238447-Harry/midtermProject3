@@ -43,7 +43,7 @@ export class SupplierDetailsComponent implements OnInit {
   }
   // Navigates back to suppliers list
   goBack(): void {
-    this.router.navigate(['/suppliers']);
+    this.router.navigate(['/suppliers-list']);
   }
 
 }

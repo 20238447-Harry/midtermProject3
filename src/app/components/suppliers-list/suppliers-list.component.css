@@ -1,40 +1,94 @@
-.page-container{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  margin-top:10px;
-  color: #020202;
+/* Adjust the container */
+.page-container {
+  max-width: 800px;
+  margin: 20px auto; /* space from navbar */
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h2{
-  margin-bottom:10px;
+/* Title */
+.page-container h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 20px 0;
+  color: #000000;
 }
 
-table{
-  border-collapse:collapse;
-  width:50%;
-  background:rgb(136, 136, 136);
+/* Table inside container scaled to fit screen */
+.page-container table {
+  width: 100%;
+  height: calc(100vh - 120px); /* viewport minus navbar and title spacing */
+  table-layout: fixed; /* keeps columns proportional */
+  border-collapse: collapse;
+  background-color: #d1eff8;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-th, td{
-  border:1px solid #020202;
-  padding:8px;
-  text-align:center;
+/* Table header */
+thead {
+  background-color: #2c3e50;
+  color: white;
 }
 
-th{
-  background:rgb(99, 99, 99);
-  color:rgb(0, 0, 0);
+th, td {
+  padding: 4px 8px; /* previous was 12px, now slightly smaller */
+  text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 
-button{
-  padding:6px 12px;
-  background:#380202;
-  color:rgb(255, 255, 255);
-  border:none;
-  cursor:pointer;
+/* Row hover effect */
+tbody tr:hover {
+  background-color: #f2f2f2;
 }
 
-button:hover{
-  background:#750303;
+/* Buttons */
+button {
+  padding: 6px 12px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive for small screens */
+@media screen and (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tbody tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+  }
+
+  td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 }
